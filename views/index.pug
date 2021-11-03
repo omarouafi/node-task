@@ -1,0 +1,15 @@
+extends base
+block content 
+  .row.mt-5
+    each product in products
+     .col-md-4
+        .card.m-2(style='width: 18rem;')
+            img.card-img-top(src=`${product.image}` alt=`${product.title}`)
+            .card-body
+                h5.card-title #{product.title}
+                h6.card-subtitle  #{product.price}$
+                p.card-text
+                | #{product.description}
+                a.btn.btn-primary.m-2(href=`/${product.id}`) Details
+
+    

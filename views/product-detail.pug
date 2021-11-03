@@ -1,0 +1,22 @@
+extends base
+block content 
+   nav.mt-4(aria-label='breadcrumb')
+    ol.breadcrumb
+     li.breadcrumb-item(aria-current='page') 
+      a(href="/") Home
+     li.breadcrumb-item.active(aria-current='page') #{product.title}
+
+   .card.m-2
+    img.card-img-top(src=`${product.image}` alt=`${product.title}` style="height:300px; object-fit:cover")
+    .card-body
+        h5.card-title #{product.title}
+        ul.list-group.list-group-flush
+            li.list-group-item Price : #{product.price}$
+            li.list-group-item #{product.description}
+        a.btn.btn-primary.m-2#buy-btn(href=`/${product.id}` data-productId=`${product.id}`) Buy
+
+    
+
+
+    
+    
